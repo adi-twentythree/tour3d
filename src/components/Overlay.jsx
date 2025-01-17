@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Back } from '../assets/Icons/Icon';
+import { CR } from '../assets/Images/Images';
 
 const Overlay = ({ setShowOverlay, store }) => {
 
@@ -62,7 +63,7 @@ const Overlay = ({ setShowOverlay, store }) => {
             {/* Right Section - Image */}
             <div className="w-full sm:w-1/2 h-full">
                 <img
-                    src="src/assets/Images/CR.jpeg"
+                    src={CR}
                     alt="Monument"
                     className="w-full h-full object-cover"
                 />
