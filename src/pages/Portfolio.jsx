@@ -81,12 +81,12 @@ const Portfolio = () => {
                     </p>
                   </div>
                   <div className='p-6 pt-0'>
-                    <a
-                      href={monument.link}
+                    <Link
+                     to={monument.link}
                       className="inline-block bg-orange-500 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300"
                     >
                       Read More
-                    </a>
+                    </Link>
                 </div>
 
               </div>
