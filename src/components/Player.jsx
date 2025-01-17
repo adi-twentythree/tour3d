@@ -20,15 +20,26 @@ const Player = () => {
   const { rapier, world } = useRapier();
   const [, getKeys] = useKeyboardControls();
 
-  const playerMove = ({ forward, backward, left, right, velocity, camera, isRunning }) => {
+  const playerMove = ({ forward, backward, left, right, velocity, camera, isRunning, rotationYVelocity, newVelocity }) => {
     if (!rigidBodyRef.current) return;
 
     const movementSpeed = isRunning ? SPEED * RUN_MULTIPLIER : SPEED;
 
+    if (!velocity) {
+      velocity = rigidBodyRef.current?.linvel();
+    }
+
+    if (newVelocity) {
+      rigidBodyRef.current?.setLinvel(
+        { x: newVelocity.x, y: velocity?.y ?? 0, z: newVelocity.z },
+        true
+      );
+      return;
+    }
 
 
     // Calculate direction based on camera orientation
-    const cameraQuaternion = camera.quaternion;
+    const cameraQuaternion = camera?.quaternion;
     frontVector.set(0, 0, (backward ? 1 : 0) - (forward ? 1 : 0));
     sideVector.set((left ? 1 : 0) - (right ? 1 : 0), 0, 0);
 
@@ -66,13 +77,6 @@ const Player = () => {
   useFrame((state) => {
     if (!rigidBodyRef.current) return;
 
-      // Ensure camera is defined
-  const { camera } = state;
-  if (!camera) {
-    console.error("Camera is undefined.");
-    return;
-  }
-    
     // Retrieve keyboard controls
     const { forward, backward, left, right, jump, run } = getKeys();
     const velocity = rigidBodyRef.current.linvel();
@@ -88,8 +92,7 @@ const Player = () => {
       left,
       right,
       velocity,
-      // camera: state.camera,
-      camera,
+      camera: state.camera,
       isRunning: run,
     });
 
@@ -108,8 +111,8 @@ const Player = () => {
     >
       <CapsuleCollider args={[0.75, 0.5]} />
       <IfInSessionMode allow={['immersive-ar', 'immersive-vr']}>
-          <VRPlayerControl playerJump={playerJump} playerMove={playerMove} />
-        </IfInSessionMode>
+        <VRPlayerControl playerJump={playerJump} playerMove={playerMove} />
+      </IfInSessionMode>
     </RigidBody>
   );
 };

@@ -39,7 +39,7 @@ const Home = () => {
       title: "Kachari Ruins",
       description: "Explore the ancient Kachari Ruins, a set of medieval monuments located in Dimapur, Nagaland.",
       imgSrc: CR,
-      link: "/scene"
+      link: "/scene",
     },
     {
       id: 2,
@@ -92,8 +92,6 @@ const Home = () => {
         <img src={Hero} alt="" className="absolute inset-0 w-full h-full object-cover opacity-80" />
 
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-500/10 to-neutral-800/95 "></div>
-
-
 
 
         {/* Content */}
@@ -189,7 +187,7 @@ const Home = () => {
       {/* Featured Monuments Section */}
       <section className="lg:h-screen py-40 bg-neutral-900">
 
-        <div className="flex flex-col justify-center items-center h-full text-center px-6">
+        <div className="flex flex-col items-center px-6">
           <p className="text-lg py-2 lg:text-2xl text-gray-300 max-w-3xl">Explore our latest work </p>
 
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white tracking-wide leading-tight">Immerse in History</h1>
@@ -198,19 +196,25 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {Monuments.map((monument) => (
-              <div key={monument.id} className="bg-white shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-500 rounded-lg p-6 text-center flex flex-col justify-between">
-                <div>
-                  <img src={monument.imgSrc} alt={monument.title} className="w-full h-48 object-cover rounded-md mb-4" />
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{monument.title}</h3>
-                  <p className="text-gray-600 mb-4">{monument.description}</p>
+              <div key={monument.id} className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl hover:scale-105 transition-transform duration-500 flex flex-col">
+                <img
+                  src={monument.imgSrc}
+                  alt={monument.title}
+                  className="w-full h-56 object-cover transition-opacity duration-300 hover:opacity-90"
+                />
+                <div className="px-6 pt-6 flex-grow">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{monument.title}</h3>
+                  <p className="text-gray-600 h-24 overflow-hidden">
+                    {monument.description}
+                  </p>
                 </div>
-                <div className='py-2'>
-                  <Link
-                    to={monument.link}
-                    className="px-3 py-2 bg-orange-500 hover:bg-red-500 rounded-full mt-auto text-white "
+                <div className='p-6 pt-0'>
+                  <a
+                    href={monument.link}
+                    className="inline-block bg-orange-500 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300"
                   >
-                    View in 3D
-                  </Link>
+                    Read More
+                  </a>
                 </div>
 
               </div>

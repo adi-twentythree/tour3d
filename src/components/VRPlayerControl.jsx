@@ -25,5 +25,5 @@ export function VRPlayerControl({ playerJump, playerMove }) {
     }
   })
 
-  return <XROrigin position={[0, 0, 40]} />
+  return <XROrigin position={[0, 0, 0]} />
 }

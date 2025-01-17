@@ -5,10 +5,9 @@ import { Home, Portfolio, Blog, Contact, About, Scene, Scenenew } from './pages/
 
 const App = () => {
   return (
-    // <Router>
-    //   <MainContent />
-    // </Router>
-    <Scene />
+    <Router>
+      <MainContent />
+    </Router>
   );
 };
 

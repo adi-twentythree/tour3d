@@ -6,6 +6,7 @@ import Share from './Share.png'
 import VirtualTour from './virtual-tour.png'
 import Videography from './videography.png'
 import Photography from './photography.png'
+import Back from './back.png'
 
 
 export {
@@ -16,6 +17,6 @@ export {
     VirtualTour,
     Videography,
     Photography,
-    
+    Back,
 }
 

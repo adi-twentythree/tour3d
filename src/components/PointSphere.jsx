@@ -1,18 +1,13 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { Text } from '@react-three/drei'; 
 
-function PointSphere({ position, title, description, more, setInfo }) {
+function PointSphere({ title, description, more, position, setInfo }) {
   const sphereRef = useRef();
- 
-  useFrame(() => {
-    if (sphereRef.current) {
-      sphereRef.current.rotation.y += 0.01;
-    }
-  });
-
+  
   const handleClick = (event) => {
     event.stopPropagation();
-    setInfo({ title, description, more });
+    setInfo({ title, description, more, position });
   };
 
   return (
