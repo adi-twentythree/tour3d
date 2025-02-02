@@ -19,7 +19,6 @@ const ContactUs = () => {
     event.preventDefault();
     const formDataObject = new FormData(event.target);
 
-    // Replace with your Web3Forms access key
     formDataObject.append("access_key", "4864f90d-9ec8-4d22-883e-644ee6413ecf");
 
     const object = Object.fromEntries(formDataObject);
@@ -47,7 +46,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="py-40 bg-neutral-900 text-white">
+    <section className="py-40 ">
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide leading-tight text-center mb-8">
           Contact Us

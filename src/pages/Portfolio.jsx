@@ -33,21 +33,21 @@ const Monuments = [
     link: "/scene"
   },
   {
-    id: 3,
+    id: 4,
     title: "Pyramids of Giza",
     description: "Explore the ancient wonders of Egypt like never before.",
     imgSrc: POG,
     link: "/scene"
   },
   {
-    id: 4,
+    id: 5,
     title: "Eiffel Tower",
     description: "Discover the beauty of Paris' iconic structure in stunning detail.",
     imgSrc: ET,
     link: "/scene"
   },
   {
-    id: 5,
+    id: 6,
     title: "Great Wall of China",
     description: "Walk along one of the world's most magnificent structures.",
     imgSrc: TWOC,
@@ -58,13 +58,13 @@ const Monuments = [
 const Portfolio = () => {
   return (
     <>
-      <section className="lg:h-full py-40 bg-neutral-900">
+      <section className="lg:h-full py-40">
         <div className="flex flex-col items-center px-6">
-          <p className="text-lg py-2 lg:text-2xl text-gray-300 max-w-3xl">Explore our latest work </p>
+          <p className="text-lg py-2 lg:text-2xl max-w-3xl">Explore our latest work </p>
 
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white tracking-wide leading-tight">Immerse in History</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide leading-tight">Immerse in History</h1>
 
-          <p className="text-lg py-2 lg:text-2xl mb-20 text-gray-300 max-w-3xl">Explore the ancient ruins and monuments of Assam. </p>
+          <p className="text-lg py-2 lg:text-2xl mb-20  max-w-3xl">Explore the ancient ruins and monuments of Assam. </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {Monuments.map((monument) => (
@@ -85,7 +85,7 @@ const Portfolio = () => {
                      to={monument.link}
                       className="inline-block bg-orange-500 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300"
                     >
-                      Read More
+                      Explore
                     </Link>
                 </div>
 

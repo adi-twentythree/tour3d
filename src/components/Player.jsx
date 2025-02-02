@@ -30,7 +30,7 @@ const Player = () => {
     }
 
     if (newVelocity) {
-      rigidBodyRef.current?.setLinvel(
+      rigidBodyRef.current.setLinvel(
         { x: newVelocity.x, y: velocity?.y ?? 0, z: newVelocity.z },
         true
       );
@@ -40,11 +40,11 @@ const Player = () => {
 
     // Calculate direction based on camera orientation
     const cameraQuaternion = camera?.quaternion;
-    frontVector.set(0, 0, (backward ? 1 : 0) - (forward ? 1 : 0));
-    sideVector.set((left ? 1 : 0) - (right ? 1 : 0), 0, 0);
+    const front = frontVector.clone().set(0, 0, (backward ? 1 : 0) - (forward ? 1 : 0));
+    const side = sideVector.clone().set((left ? 1 : 0) - (right ? 1 : 0), 0, 0);
 
     direction
-      .subVectors(frontVector, sideVector)
+      .subVectors(front, side)
       .applyQuaternion(cameraQuaternion)
       .setComponent(1, 0)
       .normalize()

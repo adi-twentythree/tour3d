@@ -3,8 +3,8 @@ import React from 'react'
 const About = () => {
   return (
     <>
-      <section className="py-40 bg-neutral-900 text-gray-900 overflow-hidden">
-        <div className="relative bg-neutral-300 max-w-4xl mx-auto  lg:p-20 md:p-10 sm:p-6 rounded-lg shadow-lg">
+      <section className="py-40 overflow-hidden">
+        <div className="relative bg-white max-w-4xl mx-auto  lg:p-20 md:p-10 sm:p-6 rounded-lg shadow-lg">
           <h1 className="lg:text-6xl text-4xl font-bold lg:py-6 sm:py-3 mb-6">
             More About Us
           </h1>
