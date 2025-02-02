@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import BgMusic from "../assets/Audio/BgMusic.mp3";
+import BgMusic from "../assets/Audio/BgAudio";
 
 // Custom hook to manage audio playback, mute state, and volume fade in/out
 export const useAudio = () => {
